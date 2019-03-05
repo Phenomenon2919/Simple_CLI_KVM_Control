@@ -2,7 +2,7 @@ import libvirt
 import libxml2
 import sys
 
-MACHINE_PATH = None
+MACHINE_PATH = "qemu:///system"
 
 def machine_create():
 	path_xml = raw_input("XML definition Path: ")
