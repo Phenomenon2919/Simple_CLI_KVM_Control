@@ -2,6 +2,7 @@ import libvirt
 import libxml2
 import sys
 
+MACHINE_PATH = None
 
 def machine_create():
 	path_xml = raw_input("XML definition Path: ")
@@ -47,7 +48,7 @@ def machine_stop():
 	machine_id.shutdown()
 
 
-connection = libvirt.open(None)
+connection = libvirt.open(MACHINE_PATH)
 if connection is None:
 	print "KVM cannot be opened"
 	sys.exit(1)
